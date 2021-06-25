@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Praticando KnockutJS</title>
+</head>
+<body>
+
+    <div class="liveExample">
+      Peso:
+      <input data-bind='value: peso, valueUpdate: "afterkeydown"' placeholder="85"/>
+       Altura:
+       <input data-bind='value: altura, valueUpdate: "afterkeydown"' placeholder="1.80"/>
+       <button data-bind='click: calcular, enable: peso().length > 0 && altura().length > 0'>Calcular</button>
+    </div>
+    <span data-bind="text: result"></span>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <script> 
+       var ImcSimple = function(){
+        this.peso = ko.observable("");
+        this.altura = ko.observable("");
+        this.result = ko.observable("");
+        
+        this.calcular = function(){
+            if(this.peso() != "" || this.altura() != ""){
+                var peso = this.peso();
+                console.log(peso)
+                var altura = this.altura();
+                var total = peso /(altura * 2);
+                this.result(Math.round(total));
+            }else{
+                alert("Você precisa digitar o peso e a altura amiguinho.")
+            }
+        }
+       }.bind(this);
+       
+       ko.applyBindings(new ImcSimple());
+    </script>
+</body>
+</html>
