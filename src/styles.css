@@ -17,15 +17,57 @@ li {
 
 .dados {
   display: flex;
+  position: fixed;
+  top: 300px;
+  left: 55px;
   flex-direction: column;
-  position: relative;
   background-color: #c4c4c4;
-  width: 290px;
+  width: 370px;
   height: 270px;
+
+  border-radius: 0 25px 25px 25px;
+
+  font-weight: bold;
+
+  box-shadow: 13px 17px 15px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 25px 25px 25px;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .campos {
   padding: 0 25px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 10px;
+}
+
+.campos input {
+  padding-left: 10px;
+
+  background-color: #fff;
+  height: 40px;
+  width: 240px;
+
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+}
+
+.campos input:focus {
+  padding-left: 10px;
+
+  background-color: #fff;
+  height: 40px;
+  width: 240px;
+
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+  o
 }
 
 .logoImg {
@@ -33,4 +75,34 @@ li {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.dados button {
+  margin-top: 20px;
+
+  background-color: #01b281;
+  height: 40px;
+  width: 240px;
+
+  border-radius: 10px;
+
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+
+  box-shadow: 13px 17px 15px -8px rgba(0, 0, 0, 0.25);
+}
+
+.dados button:hover {
+  margin-top: 20px;
+
+  background-color: #01b281;
+  height: 40px;
+  width: 240px;
+
+  border-radius: 10px;
+
+  background-color: red;
+  font-weight: bold;
+  font-size: 20px;
 }
