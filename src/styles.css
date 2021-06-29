@@ -96,31 +96,35 @@ li {
 .dados button:hover {
   margin-top: 20px;
 
-  background-color: #01b281;
+  
   height: 40px;
   width: 240px;
 
   border-radius: 10px;
 
-  background-color: red;
+  background-color: #007051;
   font-weight: bold;
   font-size: 20px;
+
+  transition: all .8s ease-in;
+  -webkit-transition: all .9s ease-in;
 }
 
 .resultado {
   display: flex;
   position: fixed;
-  top: 100px;
+  top: 70px;
   justify-content: center;
   align-items: center;
   padding: 0 120px;
   left: 15%;
   flex-direction: column;
-  background-color: #c4c4c4;
+  background: rgba(196, 196, 196, 0.9);
   width: 70%;
-  height: 70%;
+  height: 80%;
 
   line-height: 26px;
+  font-weight: 600;
 
   box-shadow: 13px 17px 15px -8px rgba(0, 0, 0, 0.25);
   border-radius: 0px 25px 25px 25px;
@@ -158,4 +162,7 @@ li {
   background-color: red;
   font-weight: bold;
   font-size: 20px;
+
+  transition: all .8s ease;
+  -webkit-transition: all .8s ease;
 }
