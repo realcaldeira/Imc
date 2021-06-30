@@ -17,10 +17,10 @@
         <img src="./src/assets/logo.jpg" class="logoImg">
 
 
-        <div class="dados" data-bind="visible: valorResultado() == true">
+        <div class="dados" data-bind="visible: valorResultado() == true, css { my-class: saida}">
             <div class="campos">
                 Peso:
-                <input data-bind='value: peso, valueUpdate: "afterkeydown"' placeholder="85" />
+                <input data-bind='value: peso, valueUpdate: "afterkeydown"' placeholder="85" id="peso" />
             </div>
             <div class="campos">
                 Altura:
@@ -33,7 +33,7 @@
         <div class="resultado" data-bind="visible: valorResultado() == false">
             <p> <strong>RESULTADO:</strong> Cara expressiva Sinto muito, mas o seu IMC é de 26.2 kg/m2, por isso você está acima do peso e deveria emagrecer no mínimo 4 kg. O seu peso ideal pode variar entre 60 kg e 81 kg por isso para emagrecer com saúde é importante comer mais frutas e verduras além de praticar exercício físico entre 2 e 3 vezes por semana, ingerindo 2712 calorias por dia.. Você deve ainda falar com seu médico para fazer exames de sangue para saber se o seu colesterol e triglicerídeos estão bem. Um nutricionista também pode te ajudar a emagrecer comendo bem, mas além da dieta é também importante fazer exercícios físicos bem orientado por um preparador físico para emagrecer mais rápido.</p>
 
-            <button>Fechar</button>
+            <button data-bind="click: fechar">Fechar</button>
         </div>
 
         <span data-bind=" text: result"></span>
@@ -42,6 +42,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
+
+
+
         var ImcSimple = function () {
             this.peso = ko.observable("");
             this.altura = ko.observable("");
@@ -64,6 +67,16 @@
                 }
 
 
+            }
+
+            this.fechar = function () {
+                this.peso("");
+                this.altura("");
+                this.result("");
+
+                this.valorResultado(true);
+
+                document.getElementById('peso').focus();
             }
         }.bind(this);
 
