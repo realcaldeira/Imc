@@ -197,3 +197,9 @@ li {
   -webkit-transition: all .8s ease;
 }
 
+@media only screen and (max-width: 600px) {
+  
+  .resultado {
+    left: 22%;
+  }
+}
