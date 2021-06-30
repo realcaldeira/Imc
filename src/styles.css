@@ -43,6 +43,8 @@ li {
   justify-content: center;
 
   padding-top: 10px;
+
+  
 }
 
 .campos input {
@@ -108,6 +110,8 @@ li {
 
   transition: all .8s ease-in;
   -webkit-transition: all .9s ease-in;
+
+  
 }
 
 .resultado {
